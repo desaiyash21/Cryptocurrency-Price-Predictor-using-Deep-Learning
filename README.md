@@ -1,2 +1,2 @@
 # Cryptocurrency-Price-Predictor-using-Deep-Learning
-Cryptocurrency Price Predictor using lstm and gru
+Cryptocurrency Price Predictor using LSTM and GRU
