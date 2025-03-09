@@ -1,0 +1,8 @@
+pandas
+numpy
+yfinance
+matplotlib
+seaborn
+scikit-learn
+tensorflow
+datetime
