@@ -1,0 +1,10 @@
+# Ignore virtual environment
+jupyter_env/
+*.pyc
+__pycache__/
+.DS_Store
+
+# Ignore IDE/editor settings
+.vscode/
+.idea/
+*.swp
