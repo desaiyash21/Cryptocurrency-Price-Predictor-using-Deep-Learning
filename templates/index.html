@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Price Prediction</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Bitcoin Price Prediction</h1>
+    <label for="days">Enter Future Days:</label>
+    <input type="number" id="days" value="30">
+    <button onclick="getPrediction()">Predict</button>
+
+    <canvas id="chart"></canvas>
+
+    <script>
+        async function getPrediction() {
+            let days = document.getElementById("days").value;
+            let response = await fetch('/predict', {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ days: days })
+            });
+            let data = await response.json();
+
+            let labels = Array.from({ length: days }, (_, i) => i + 1);
+            let lstmPred = data.LSTM.map(d => d[0]);
+            let gruPred = data.GRU.map(d => d[0]);
+
+            new Chart(document.getElementById("chart"), {
+                type: "line",
+                data: {
+                    labels: labels,
+                    datasets: [
+                        { label: "LSTM Prediction", data: lstmPred, borderColor: "blue", fill: false },
+                        { label: "GRU Prediction", data: gruPred, borderColor: "red", fill: false }
+                    ]
+                }
+            });
+        }
+    </script>
+</body>
+</html>
