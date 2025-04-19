@@ -6,3 +6,5 @@ seaborn
 scikit-learn
 tensorflow
 datetime
+streamlit
+keras
