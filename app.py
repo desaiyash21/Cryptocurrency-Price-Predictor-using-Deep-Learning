@@ -55,7 +55,7 @@ def main():
     st.set_page_config(page_title="Bitcoin Price Prediction", page_icon="📈", layout="wide")
 
     st.title("📈 Bitcoin Price Prediction")
-    st.write("Predict future Bitcoin prices using a **GRU model** trained on historical data.")
+    st.write("Predict future Bitcoin prices using a **LSTM model** trained on historical data.")
 
     # Sidebar for user input
     st.sidebar.title("Settings")
