@@ -1,10 +1,4 @@
-# Ignore virtual environment
-jupyter_env/
-*.pyc
-__pycache__/
-.DS_Store
+notes.txt
+crypto_model.keras
+.ipynb_checkpoints/
 
-# Ignore IDE/editor settings
-.vscode/
-.idea/
-*.swp
